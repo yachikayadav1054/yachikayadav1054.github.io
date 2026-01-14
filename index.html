@@ -3,884 +3,260 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Yachika Yadav - Power Platform Developer Portfolio. 3+ years building enterprise PowerApps, Power Automate workflows, and custom PCF components.">
-    <meta name="keywords" content="Power Platform, PowerApps, Power Automate, Dataverse, PCF Components, Power BI, Developer">
-    <title>Yachika Yadav | Power Platform Developer Portfolio</title>
-    
+    <title>Yachika Yadav | Power Platform Developer</title>
     <style>
-        /* ========== GLOBAL STYLES ========== */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        :root {
-            --primary-color: #667eea;
-            --secondary-color: #764ba2;
-            --accent-color: #f093fb;
-            --success-color: #28a745;
-            --warning-color: #ffc107;
-            --danger-color: #dc3545;
-            --text-dark: #2c3e50;
-            --text-light: #7f8c8d;
-            --bg-light: #f4f7fa;
-            --card-shadow: 0 4px 20px rgba(0,0,0,0.08);
-            --card-shadow-hover: 0 12px 40px rgba(102, 126, 234, 0.2);
-        }
-        
-        html {
-            scroll-behavior: smooth;
-        }
-        
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #f9fafb;
+            color: #1f2937;
             line-height: 1.6;
-            color: var(--text-dark);
-            background: var(--bg-light);
+            max-width: 900px;
+            margin: auto;
+            padding: 30px;
         }
-        
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
+        h1, h2, h3 {
+            color: #111827;
         }
-        
-        /* ========== HEADER / HERO SECTION ========== */
-        .hero {
-            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
-            color: white;
-            padding: 80px 20px 60px;
-            position: relative;
-            overflow: hidden;
+        h1 {
+            font-size: 2.4rem;
         }
-        
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="2" fill="white" opacity="0.1"/></svg>');
-            animation: float 20s linear infinite;
+        h2 {
+            margin-top: 40px;
+            border-bottom: 2px solid #e5e7eb;
+            padding-bottom: 5px;
         }
-        
-        @keyframes float {
-            from { transform: translateY(0); }
-            to { transform: translateY(-100px); }
+        ul {
+            margin-left: 20px;
         }
-        
-        .hero-content {
-            position: relative;
-            z-index: 1;
-            text-align: center;
+        li {
+            margin-bottom: 8px;
         }
-        
-        .hero h1 {
-            font-size: 3rem;
-            margin-bottom: 10px;
-            animation: fadeInUp 0.8s ease;
-        }
-        
-        .hero .tagline {
-            font-size: 1.4rem;
-            opacity: 0.95;
-            margin-bottom: 20px;
-            animation: fadeInUp 0.8s ease 0.2s backwards;
-        }
-        
-        .hero .intro {
-            font-size: 1.1rem;
-            max-width: 800px;
-            margin: 0 auto 30px;
-            line-height: 1.8;
-            opacity: 0.9;
-            animation: fadeInUp 0.8s ease 0.4s backwards;
-        }
-        
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        
-        .hero-buttons {
-            display: flex;
-            gap: 15px;
-            justify-content: center;
-            flex-wrap: wrap;
-            margin-top: 30px;
-            animation: fadeInUp 0.8s ease 0.6s backwards;
-        }
-        
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            padding: 12px 30px;
-            background: white;
-            color: var(--primary-color);
-            text-decoration: none;
-            border-radius: 30px;
-            font-weight: 600;
-            font-size: 1rem;
-            transition: all 0.3s ease;
-            border: 2px solid white;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-        }
-        
-        .btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(0,0,0,0.3);
-        }
-        
-        .btn-outline {
-            background: transparent;
-            color: white;
-            border: 2px solid white;
-        }
-        
-        .btn-outline:hover {
-            background: white;
-            color: var(--primary-color);
-        }
-        
-        /* ========== STATS SECTION ========== */
-        .stats-section {
-            background: white;
-            margin-top: -40px;
-            border-radius: 15px;
-            box-shadow: var(--card-shadow);
-            padding: 40px 30px;
-            position: relative;
-            z-index: 2;
-        }
-        
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 30px;
-            text-align: center;
-        }
-        
-        .stat-box {
-            padding: 20px;
-        }
-        
-        .stat-number {
-            font-size: 3rem;
-            font-weight: bold;
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            margin-bottom: 5px;
-        }
-        
-        .stat-label {
-            color: var(--text-light);
-            font-size: 0.95rem;
-            font-weight: 500;
-        }
-        
-        /* ========== SECTION STYLES ========== */
-        .section {
-            padding: 80px 0;
-        }
-        
-        .section-title {
-            font-size: 2.5rem;
-            text-align: center;
-            margin-bottom: 15px;
-            color: var(--text-dark);
-            position: relative;
+        .tag {
             display: inline-block;
-            width: 100%;
-        }
-        
-        .section-subtitle {
-            text-align: center;
-            color: var(--text-light);
-            font-size: 1.1rem;
-            margin-bottom: 50px;
-        }
-        
-        /* ========== ABOUT SECTION ========== */
-        .about-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 50px;
-            align-items: center;
-        }
-        
-        .about-text {
-            font-size: 1.1rem;
-            line-height: 1.8;
-            color: var(--text-light);
-        }
-        
-        .about-text p {
-            margin-bottom: 20px;
-        }
-        
-        .strengths-list {
-            list-style: none;
-            margin-top: 30px;
-        }
-        
-        .strengths-list li {
-            padding: 15px;
-            background: white;
-            margin-bottom: 10px;
-            border-radius: 8px;
-            box-shadow: var(--card-shadow);
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            transition: all 0.3s ease;
-        }
-        
-        .strengths-list li:hover {
-            transform: translateX(10px);
-            box-shadow: var(--card-shadow-hover);
-        }
-        
-        .strengths-list li::before {
-            content: '✓';
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-            color: white;
-            width: 30px;
-            height: 30px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: bold;
-            flex-shrink: 0;
-        }
-        
-        /* ========== SKILLS SECTION ========== */
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-        }
-        
-        .skill-category {
-            background: white;
-            padding: 30px;
-            border-radius: 12px;
-            box-shadow: var(--card-shadow);
-            transition: all 0.3s ease;
-        }
-        
-        .skill-category:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--card-shadow-hover);
-        }
-        
-        .skill-category h3 {
-            color: var(--primary-color);
-            margin-bottom: 20px;
-            font-size: 1.3rem;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        
-        .skill-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
-        
-        .skill-tag {
-            background: linear-gradient(135deg, #667eea15, #764ba215);
-            color: var(--primary-color);
-            padding: 8px 16px;
-            border-radius: 20px;
+            background: #e0e7ff;
+            color: #3730a3;
+            padding: 6px 10px;
+            border-radius: 6px;
+            margin: 4px 4px 4px 0;
             font-size: 0.9rem;
-            font-weight: 500;
-            border: 1px solid var(--primary-color);
-            transition: all 0.3s ease;
         }
-        
-        .skill-tag:hover {
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-            color: white;
-            transform: scale(1.05);
-        }
-        
-        /* ========== PROJECTS SECTION ========== */
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
-            gap: 30px;
-            margin-bottom: 40px;
-        }
-        
-        .project-card {
-            background: white;
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: var(--card-shadow);
-            transition: all 0.3s ease;
-            border-top: 4px solid var(--primary-color);
-        }
-        
-        .project-card:hover {
-            transform: translateY(-10px);
-            box-shadow: var(--card-shadow-hover);
-        }
-        
-        .project-image {
-            width: 100%;
-            height: 250px;
-            background: linear-gradient(135deg, #667eea15 0%, #764ba215 100%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 4rem;
-            color: var(--primary-color);
-            position: relative;
-            border-bottom: 2px solid #f0f0f0;
-        }
-        
-        .project-image::after {
-            content: 'Add Screenshot';
-            position: absolute;
-            bottom: 15px;
-            right: 15px;
-            background: var(--primary-color);
-            color: white;
-            padding: 8px 15px;
-            border-radius: 20px;
-            font-size: 0.85rem;
-            opacity: 0.8;
-        }
-        
-        .project-content {
-            padding: 30px;
-        }
-        
-        .project-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            margin-bottom: 15px;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
-        
-        .project-card h3 {
-            color: var(--primary-color);
-            font-size: 1.5rem;
-            margin-bottom: 5px;
-        }
-        
-        .project-type {
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-            color: white;
-            padding: 6px 15px;
-            border-radius: 20px;
-            font-size: 0.75rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-        
-        .project-description {
-            color: #555;
-            margin: 20px 0;
-            line-height: 1.8;
-            font-size: 1rem;
-        }
-        
-        .impact-section {
-            background: linear-gradient(135deg, #28a74515, #20c99715);
-            padding: 20px;
-            border-radius: 10px;
-            margin: 20px 0;
-            border-left: 4px solid var(--success-color);
-        }
-        
-        .impact-section h4 {
-            color: var(--success-color);
-            font-size: 0.9rem;
-            margin-bottom: 15px;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-        
-        .impact-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 12px;
-        }
-        
-        .impact-item {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            font-size: 0.9rem;
-            color: #333;
-        }
-        
-        .impact-item::before {
-            content: '✅';
-            font-size: 1.1rem;
-            flex-shrink: 0;
-        }
-        
-        .challenge-box {
-            background: #fff9e6;
-            padding: 20px;
-            border-radius: 10px;
-            margin: 20px 0;
-            border-left: 4px solid var(--warning-color);
-        }
-        
-        .challenge-box h4 {
-            color: #f57c00;
-            font-size: 0.9rem;
-            margin-bottom: 10px;
-            font-weight: 600;
-        }
-        
-        .challenge-box p {
-            color: #555;
-            font-size: 0.95rem;
-            line-height: 1.7;
-        }
-        
-        .features-list {
-            list-style: none;
-            margin: 20px 0;
-        }
-        
-        .features-list h4 {
-            color: var(--text-dark);
-            font-size: 1rem;
-            margin-bottom: 15px;
-            font-weight: 600;
-        }
-        
-        .features-list li {
-            padding: 10px 0;
-            padding-left: 30px;
-            position: relative;
-            color: #555;
-            font-size: 0.95rem;
-            line-height: 1.6;
-        }
-        
-        .features-list li::before {
-            content: '▸';
-            position: absolute;
-            left: 0;
-            color: var(--primary-color);
-            font-weight: bold;
-            font-size: 1.2rem;
-        }
-        
-        .tech-stack {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            margin: 25px 0;
-        }
-        
-        .tech-badge {
-            background: #e8eaf6;
-            color: var(--primary-color);
-            padding: 8px 16px;
-            border-radius: 20px;
-            font-size: 0.85rem;
-            font-weight: 500;
-            border: 1px solid #667eea30;
-        }
-        
-        .project-links {
-            display: flex;
-            gap: 12px;
-            margin-top: 25px;
-            padding-top: 25px;
-            border-top: 1px solid #f0f0f0;
-            flex-wrap: wrap;
-        }
-        
-        .btn-primary {
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-            color: white;
-            padding: 12px 25px;
-            border-radius: 25px;
+        .contact a {
             text-decoration: none;
-            font-weight: 600;
-            font-size: 0.9rem;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            transition: all 0.3s ease;
-            border: none;
+            color: #2563eb;
         }
-        
-        .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
-        }
-        
-        .btn-secondary {
-            background: white;
-            color: var(--primary-color);
-            padding: 12px 25px;
-            border-radius: 25px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 0.9rem;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            transition: all 0.3s ease;
-            border: 2px solid var(--primary-color);
-        }
-        
-        .btn-secondary:hover {
-            background: #667eea10;
-            transform: translateY(-2px);
-        }
-        
-        /* ========== CERTIFICATIONS SECTION ========== */
-        .certs-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
-        }
-        
-        .cert-card {
-            background: white;
-            padding: 30px;
-            border-radius: 12px;
-            box-shadow: var(--card-shadow);
-            display: flex;
-            align-items: center;
-            gap: 20px;
-            transition: all 0.3s ease;
-            border-left: 4px solid var(--primary-color);
-        }
-        
-        .cert-card:hover {
-            transform: translateX(5px);
-            box-shadow: var(--card-shadow-hover);
-        }
-        
-        .cert-icon {
-            font-size: 2.5rem;
-            flex-shrink: 0;
-        }
-        
-        .cert-info h3 {
-            color: var(--text-dark);
-            font-size: 1.1rem;
-            margin-bottom: 5px;
-        }
-        
-        .cert-info p {
-            color: var(--text-light);
-            font-size: 0.9rem;
-        }
-        
-        /* ========== CONTACT SECTION ========== */
-        .contact-section {
-            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
-            color: white;
-            padding: 80px 20px;
-            text-align: center;
-        }
-        
-        .contact-section h2 {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-        }
-        
-        .contact-section p {
-            font-size: 1.2rem;
-            margin-bottom: 40px;
-            opacity: 0.9;
-        }
-        
-        .contact-links {
-            display: flex;
-            gap: 20px;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-        
-        .contact-btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            padding: 15px 35px;
-            background: white;
-            color: var(--primary-color);
-            text-decoration: none;
-            border-radius: 30px;
-            font-weight: 600;
-            font-size: 1.1rem;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-        }
-        
-        .contact-btn:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 30px rgba(0,0,0,0.3);
-        }
-        
-        /* ========== FOOTER ========== */
         .footer {
-            background: #2c3e50;
-            color: white;
-            text-align: center;
-            padding: 30px 20px;
+            margin-top: 40px;
+            font-size: 0.9rem;
+            color: #6b7280;
         }
-        
-        .footer p {
-            opacity: 0.8;
-            font-size: 0.95rem;
-        }
-        
-        /* ========== RESPONSIVE DESIGN ========== */
-        @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2rem;
-            }
-            
-            .hero .tagline {
-                font-size: 1.1rem;
-            }
-            
-            .hero .intro {
-                font-size: 1rem;
-            }
-            
-            .stats-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            
-            .about-content {
-                grid-template-columns: 1fr;
-            }
-            
-            .projects-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .impact-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .section-title {
-                font-size: 2rem;
-            }
-            
-            .stat-number {
-                font-size: 2.5rem;
-            }
-        }
-        
-        /* ========== SCROLL ANIMATIONS ========== */
-        .fade-in {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.6s ease;
-        }
-        
-        .fade-in.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
+        /* Projects Section */
+#projects {
+  padding: 40px 20px;
+  max-width: 900px;
+  margin: auto;
+}
+
+#projects h2 {
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+/* Project Card */
+.project-card {
+  background: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  padding: 20px 24px;
+  margin-bottom: 24px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.08);
+}
+
+.project-card h3 {
+  margin-top: 0;
+  color: #333;
+  font-size: 22px;
+}
+
+.project-card p {
+  color: #555;
+  line-height: 1.6;
+}
+
+.project-card ul {
+  padding-left: 18px;
+  margin: 12px 0;
+}
+
+.project-card ul li {
+  margin-bottom: 6px;
+  color: #444;
+}
+
+.project-card a {
+  display: inline-block;
+  margin-top: 12px;
+  text-decoration: none;
+  color: #0066ff;
+  font-weight: 600;
+}
+
+.project-card a:hover {
+  text-decoration: underline;
+}
+
     </style>
 </head>
 <body>
-    <!-- ========== HERO SECTION ========== -->
-    <section class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <h1>👋 Hi, I'm Yachika Yadav</h1>
-                <p class="tagline">Power Platform Developer | Mumbai, India 🇮🇳</p>
-                <p class="intro">
-                    I design and build <strong>enterprise-grade solutions using Microsoft Power Platform</strong>,
-                    with a strong focus on scalable app architecture, automation, and performance optimization.
-                    Specialized in solving complex delegation challenges and developing custom PCF components
-                    that deliver measurable business impact.
-                </p>
-                <div class="hero-buttons">
-                    <a href="#projects" class="btn">🚀 View Projects</a>
-                    <a href="#contact" class="btn btn-outline">📧 Get In Touch</a>
-                    <a href="https://linkedin.com/in/yachikayadav" target="_blank" class="btn btn-outline">💼 LinkedIn</a>
-                    <a href="https://github.com/yachikayadav1054" target="_blank" class="btn btn-outline">💻 GitHub</a>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- ========== STATS SECTION ========== -->
-    <section class="container">
-        <div class="stats-section fade-in">
-            <div class="stats-grid">
-                <div class="stat-box">
-                    <div class="stat-number">3+</div>
-                    <div class="stat-label">Years Experience</div>
-                </div>
-                <div class="stat-box">
-                    <div class="stat-number">10+</div>
-                    <div class="stat-label">Enterprise Apps</div>
-                </div>
-                <div class="stat-box">
-                    <div class="stat-number">350+</div>
-                    <div class="stat-label">Hours Saved/Month</div>
-                </div>
-                <div class="stat-box">
-                    <div class="stat-number">10+</div>
-                    <div class="stat-label">PCF Components</div>
-                </div>
-            </div>
-        </div>
-    </section>
+    <h1>Hi, I’m Yachika Yadav 👋</h1>
+    <h3>Power Platform Developer | Mumbai, India 🇮🇳</h3>
 
-    <!-- ========== ABOUT SECTION ========== -->
-    <section class="section">
-        <div class="container">
-            <h2 class="section-title fade-in">🚀 About Me</h2>
-            <p class="section-subtitle fade-in">Turning complex business challenges into elegant Power Platform solutions</p>
-            
-            <div class="about-content">
-                <div class="about-text fade-in">
-                    <p>
-                        With <strong>3+ years of hands-on experience</strong> in Power Platform development,
-                        I specialize in building enterprise applications that eliminate manual work and scale effortlessly.
-                    </p>
-                    <p>
-                        My passion lies in solving the "impossible" problems — like optimizing Canvas Apps to handle
-                        <strong>10,000+ records</strong> without delegation issues, or building custom PCF components
-                        that unlock capabilities beyond standard Power Platform features.
-                    </p>
-                    <p>
-                        I've delivered solutions that have recovered <strong>350+ hours per month</strong> across
-                        organizations, eliminated <strong>90% of manual processes</strong>, and improved user
-                        satisfaction by <strong>60%</strong> through thoughtful UX design.
-                    </p>
-                </div>
-                
-                <div class="fade-in">
-                    <ul class="strengths-list">
-                        <li>Performance optimization for large datasets (10K+ records)</li>
-                        <li>Custom PCF component development with TypeScript & React</li>
-                        <li>Enterprise-grade security & governance implementation</li>
-                        <li>Complex Dataverse schema design & data modeling</li>
-                        <li>Power Automate workflows with advanced error handling</li>
-                        <li>Translating business requirements into technical solutions</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
+    <p>
+        I design and build <strong>enterprise-grade solutions using Microsoft Power Platform</strong>,
+        with a strong focus on scalable app architecture, automation, and performance optimization.
+        I enjoy solving complex business problems, especially <strong>delegation challenges and custom component development</strong>.
+    </p>
 
-    <!-- ========== SKILLS SECTION ========== -->
-    <section class="section" style="background: white;">
-        <div class="container">
-            <h2 class="section-title fade-in">🛠️ Technical Skills</h2>
-            <p class="section-subtitle fade-in">Comprehensive expertise across the Microsoft Power Platform ecosystem</p>
-            
-            <div class="skills-grid">
-                <div class="skill-category fade-in">
-                    <h3>⚡ Power Platform</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">Canvas Apps</span>
-                        <span class="skill-tag">Model-Driven Apps</span>
-                        <span class="skill-tag">Power Automate</span>
-                        <span class="skill-tag">Cloud Flows</span>
-                        <span class="skill-tag">Desktop Flows</span>
-                        <span class="skill-tag">Dataverse</span>
-                        <span class="skill-tag">Power BI</span>
-                        <span class="skill-tag">AI Builder</span>
-                        <span class="skill-tag">Copilot</span>
-                        <span class="skill-tag">Power Pages</span>
-                        <span class="skill-tag">PCF Components</span>
-                    </div>
-                </div>
-                
-                <div class="skill-category fade-in">
-                    <h3>💻 Development</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">Power Fx</span>
-                        <span class="skill-tag">TypeScript</span>
-                        <span class="skill-tag">JavaScript</span>
-                        <span class="skill-tag">React</span>
-                        <span class="skill-tag">C#</span>
-                        <span class="skill-tag">HTML/CSS</span>
-                        <span class="skill-tag">DAX</span>
-                        <span class="skill-tag">SQL</span>
-                        <span class="skill-tag">JSON</span>
-                    </div>
-                </div>
-                
-                <div class="skill-category fade-in">
-                    <h3>🔌 Integration & Cloud</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">SharePoint</span>
-                        <span class="skill-tag">SQL Server</span>
-                        <span class="skill-tag">Office 365</span>
-                        <span class="skill-tag">REST APIs</span>
-                        <span class="skill-tag">Azure</span>
-                        <span class="skill-tag">Microsoft Entra ID</span>
-                        <span class="skill-tag">ALM</span>
-                        <span class="skill-tag">Managed Solutions</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+    <h2>🚀 About Me</h2>
+    <ul>
+        <li>💼 3+ years of hands-on experience in Power Platform development</li>
+        <li>🏗️ Built and deployed 10+ enterprise applications used across business teams</li>
+        <li>⚡ Delivered automation solutions saving 350+ hours per month</li>
+        <li>🎯 Developed 10+ custom PCF components for reusable and enhanced UI/UX</li>
+        <li>🧩 Strong experience with Canvas Apps, Model-Driven Apps, Dataverse, and Power Automate</li>
+    </ul>
 
-    <!-- ========== PROJECTS SECTION ========== -->
-    <section id="projects" class="section">
-        <div class="container">
-            <h2 class="section-title fade-in">💼 Featured Projects</h2>
-            <p class="section-subtitle fade-in">Real-world solutions with measurable business impact</p>
-            
-            <div class="projects-grid">
-                <!-- Project 1: Multi-Select PCF -->
-                <div class="project-card fade-in">
-                    <div class="project-image">
-                        🎨
-                        <!-- Replace with: <img src="./images/multiselect-demo.gif" alt="Multi-Select Component" style="width:100%; height:100%; object-fit:cover;"> -->
-                    </div>
-                    <div class="project-content">
-                        <div class="project-header">
-                            <h3>Multi-Select PCF Component</h3>
-                            <span class="project-type">PCF Control</span>
-                        </div>
-                        
-                        <p class="project-description">
-                            A reusable PowerApps Component Framework (PCF) control that revolutionized 
-                            multi-selection UX across enterprise applications, improving user satisfaction 
-                            by <strong>60%</strong> through intuitive search and chip-style interface.
-                        </p>
-                        
-                        <div class="impact-section">
-                            <h4>📈 Business Impact</h4>
-                            <div class="impact-grid">
-                                <div class="impact-item">Reduced data entry time by 40%</div>
-                                <div class="impact-item">Used across 5+ enterprise apps</div>
-                                <div class="impact-item">Improved satisfaction by 60%</div>
-                                <div class="impact-item">Handles 10,000+ items efficiently</div>
-                            </div>
-                        </div>
-                        
-                        <div
+    <h2>🛠️ Tech Stack & Skills</h2>
+
+    <h3>Power Platform</h3>
+    <div>
+        <span class="tag">Power Apps</span>
+        <span class="tag">Power Automate</span>
+        <span class="tag">Dataverse</span>
+        <span class="tag">Power BI</span>
+        <span class="tag">ALM</span>
+        <span class="tag">Copilot</span>
+    </div>
+
+    <h3>Custom Development</h3>
+    <div>
+        <span class="tag">PCF</span>
+        <span class="tag">TypeScript</span>
+        <span class="tag">JavaScript</span>
+        <span class="tag">Html</span>
+        <span class="tag">CSS</span>
+    </div>
+
+    <h3>Integrations & Data</h3>
+    <div>
+        <span class="tag">SQL Server</span>
+        <span class="tag">SharePoint</span>
+        <span class="tag">Office 365</span>
+        <span class="tag">REST APIs</span>
+    </div>
+
+    <h2>🧠 Core Strengths</h2>
+    <ul>
+        <li>Solving delegation and performance challenges in large datasets</li>
+        <li>Designing user-friendly, enterprise-grade Power Apps</li>
+        <li>Building secure and scalable automated workflows</li>
+        <li>Creating reusable custom components using PCF</li>
+        <li>Translating business requirements into efficient technical solutions</li>
+    </ul>
+
+    <h2>🏆 Certifications</h2>
+    <ul>
+        <li>Microsoft Certified: Power Platform Functional Consultant (PL-200)</li>
+        <li>Microsoft Certified: Power BI Data Analyst (PL-300)</li>
+        <li>Microsoft Certified: Power Platform Fundamentals (PL-900)</li>
+        <li>Microsoft Certified: Azure Fundamentals (AZ-900)</li>
+    </ul>
+
+    <h2>📫 Connect With Me</h2>
+    <ul class="contact">
+        <li>💼 <a href="https://linkedin.com/in/yachikayadav" target="_blank">LinkedIn</a></li>
+        <li>📧 <a href="mailto:yachikayadav1054@gmail.com">yachikayadav1054@gmail.com</a></li>
+        <li>🌐 Portfolio: <a href="https://yachikayadav1054.github.io/">yachikayadav1054.github.io </a> </li>
+    </ul>
+
+    <div class="footer">
+        ⭐ Always open to learning, collaboration, and solving challenging Power Platform problems.
+    </div>
+
+  <section id="projects">
+  <h2>Projects</h2>
+
+  <!-- Project 1: Multi-Select PCF -->
+  <div class="project-card">
+    <h3>Multi-Select PCF Component</h3>
+
+    <p>
+      A reusable PowerApps Component Framework (PCF) control designed to
+      enhance user experience by enabling multi-selection with search
+      and chip-style UI.
+    </p>
+
+    <ul>
+      <li>Built using TypeScript and PCF standards</li>
+      <li>Supports search and dynamic filtering</li>
+      <li>Displays selected values as removable chips</li>
+      <li>Optimized for performance with large datasets</li>
+      <li>Reusable across Canvas Apps and Model-Driven Apps</li>
+    </ul>
+
+    <p>
+      <strong>Tech Stack:</strong>
+      TypeScript, PCF, Html, CSS
+    </p>
+
+    <a
+      href="https://github.com/yachikayadav1054/pcf-multiselect"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      🔗 View GitHub Repository
+    </a>
+  </div>
+
+  <!-- Project 2: Corporate Action App -->
+  <div class="project-card">
+    <h3>Corporate Action Management Application</h3>
+
+    <p>
+      An enterprise-grade PowerApps application developed to manage
+      corporate actions with automated approval workflows and
+      centralized data tracking.
+    </p>
+
+    <ul>
+      <li>End-to-end corporate action lifecycle management</li>
+      <li>Automated approval workflows using Power Automate</li>
+      <li>Role-based access and security</li>
+      <li>Centralized data storage with audit tracking</li>
+      <li>Designed for enterprise scalability</li>
+    </ul>
+
+    <p>
+      <strong>Tech Stack:</strong>
+      Power Apps, Power Automate, SQL Server
+    </p>
+
+    <a
+      href="https://github.com/yachikayadav1054/corporate-action-powerapps"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      🔗 View Project Documentation
+    </a>
+  </div>
+</section>
+
+
+</body>
+</html>
