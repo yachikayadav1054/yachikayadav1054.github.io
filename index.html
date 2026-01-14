@@ -49,6 +49,67 @@
             font-size: 0.9rem;
             color: #6b7280;
         }
+        /* Projects Section */
+#projects {
+  padding: 40px 20px;
+  max-width: 900px;
+  margin: auto;
+}
+
+#projects h2 {
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+/* Project Card */
+.project-card {
+  background: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  padding: 20px 24px;
+  margin-bottom: 24px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.08);
+}
+
+.project-card h3 {
+  margin-top: 0;
+  color: #333;
+  font-size: 22px;
+}
+
+.project-card p {
+  color: #555;
+  line-height: 1.6;
+}
+
+.project-card ul {
+  padding-left: 18px;
+  margin: 12px 0;
+}
+
+.project-card ul li {
+  margin-bottom: 6px;
+  color: #444;
+}
+
+.project-card a {
+  display: inline-block;
+  margin-top: 12px;
+  text-decoration: none;
+  color: #0066ff;
+  font-weight: 600;
+}
+
+.project-card a:hover {
+  text-decoration: underline;
+}
+
     </style>
 </head>
 <body>
@@ -127,6 +188,75 @@
     <div class="footer">
         ⭐ Always open to learning, collaboration, and solving challenging Power Platform problems.
     </div>
+
+  <section id="projects">
+  <h2>Projects</h2>
+
+  <!-- Project 1: Multi-Select PCF -->
+  <div class="project-card">
+    <h3>Multi-Select PCF Component</h3>
+
+    <p>
+      A reusable PowerApps Component Framework (PCF) control designed to
+      enhance user experience by enabling multi-selection with search
+      and chip-style UI.
+    </p>
+
+    <ul>
+      <li>Built using TypeScript and PCF standards</li>
+      <li>Supports search and dynamic filtering</li>
+      <li>Displays selected values as removable chips</li>
+      <li>Optimized for performance with large datasets</li>
+      <li>Reusable across Canvas Apps and Model-Driven Apps</li>
+    </ul>
+
+    <p>
+      <strong>Tech Stack:</strong>
+      TypeScript, PCF, React
+    </p>
+
+    <a
+      href="https://github.com/yachikayadav1054/pcf-multiselect"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      🔗 View GitHub Repository
+    </a>
+  </div>
+
+  <!-- Project 2: Corporate Action App -->
+  <div class="project-card">
+    <h3>Corporate Action Management Application</h3>
+
+    <p>
+      An enterprise-grade PowerApps application developed to manage
+      corporate actions with automated approval workflows and
+      centralized data tracking.
+    </p>
+
+    <ul>
+      <li>End-to-end corporate action lifecycle management</li>
+      <li>Automated approval workflows using Power Automate</li>
+      <li>Role-based access and security</li>
+      <li>Centralized data storage with audit tracking</li>
+      <li>Designed for enterprise scalability</li>
+    </ul>
+
+    <p>
+      <strong>Tech Stack:</strong>
+      Power Apps, Power Automate, Dataverse, SQL Server
+    </p>
+
+    <a
+      href="https://github.com/yachikayadav1054/corporate-action-powerapps"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      🔗 View Project Documentation
+    </a>
+  </div>
+</section>
+
 
 </body>
 </html>
