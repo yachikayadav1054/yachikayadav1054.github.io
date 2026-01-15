@@ -192,93 +192,59 @@
 <section id="projects">
   <h2>Projects</h2>
 
-  <!-- Project 1: Multi-Select PCF -->
-  <div class="project-card">
-    <h3>Multi-Select PCF Component</h3>
-
-    <p>
-      A reusable PowerApps Component Framework (PCF) control developed to
-      enhance user experience by enabling searchable multi-selection with
-      a chip-based interface where standard PowerApps controls were insufficient.
-    </p>
-
-    <ul>
-      <li>Developed using TypeScript following PCF best practices</li>
-      <li>Implements search and dynamic filtering for efficient selection</li>
-      <li>Displays selected values as removable, interactive chips</li>
-      <li>Optimized for performance when handling large datasets</li>
-      <li>Designed for reuse across Canvas Apps and Model-Driven Apps</li>
-    </ul>
-
-    <p>
-      <strong>Tech Stack:</strong>
-      HTML, CSS, TypeScript, PowerApps Component Framework (PCF)
-    </p>
-
-    <a
-      href="https://github.com/yachikayadav1054/pcf-multiselect"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      🔗 View GitHub Repository
-    </a>
-  </div>
-
-<!-- Project 2: Corporate Action & Portfolio Management -->
+<!-- Project 1: Corporate Action & Portfolio Management -->
 <div class="project-card">
-  <h3>Corporate Action & Portfolio Management App</h3>
-
-  <p>
-    A Canvas PowerApps application that streamlines the creation and management
-    of corporate actions and their associated portfolio records, enabling
-    operational efficiency and accurate investment tracking.
+  <h3>Corporate Action & Portfolio Management Application</h3>
+  <p class="project-subtitle">
+    Canvas PowerApps · Power Automate · SQL Server
   </p>
 
-  <p><strong>Business Impact:</strong></p>
+  <p>
+    Enterprise-grade Canvas PowerApps application developed to manage corporate actions
+    and their associated portfolio records. The solution was migrated from a legacy
+    SharePoint on-prem application built in C#, where existing business logic was
+    reverse-engineered and reimplemented in PowerApps while preserving all core
+    functionalities.
+  </p>
+
+  <h4>Business Impact</h4>
   <ul>
-    <li>Reduced manual data entry and Excel dependency by <strong>50%</strong></li>
+    <li>Reduced manual data entry and Excel dependency by approximately 50%</li>
     <li>Enabled accurate tracking of multiple portfolio records per corporate action</li>
-    <li>Improved operational efficiency and data integrity across teams</li>
+    <li>Improved operational efficiency and data integrity across operational teams</li>
   </ul>
 
-  <p><strong>Key Features:</strong></p>
+  <h4>Key Features</h4>
   <ul>
-    <li>Create and manage corporate actions with multiple associated portfolio records</li>
-    <li>Role-based access and visibility for three distinct user roles</li>
+    <li>Centralized landing page displaying all corporate actions with searchable galleries</li>
+    <li>One-to-many relationship management: one corporate action with multiple portfolio records</li>
+    <li>Role-based access control with three distinct user roles</li>
+    <li>Restricted creation of new corporate actions based on user role</li>
     <li>Dynamic forms with validations and conditional visibility</li>
-    <li>Refresh and maintain portfolio records without data loss</li>
-    <li>Searchable, interactive galleries for portfolio records</li>
+    <li>Refresh and maintenance of portfolio records without data loss</li>
   </ul>
 
-  <p><strong>Technical Highlights:</strong></p>
+  <h4>Technical Highlights</h4>
   <ul>
-    <li>Built using Canvas PowerApps with SQL Server backend</li>
-    <li>Managed complex portfolio data using PowerApps collections</li>
-    <li>Converted collections to structured JSON and passed to Power Automate for persistence</li>
+    <li>Executed SQL Server stored procedures via Power Automate</li>
+    <li>Processed, cleaned, and normalized backend data into PowerApps collections</li>
+    <li>Bound collections to interactive galleries for performant UI rendering</li>
+    <li>Managed complex multi-record portfolio data using collections</li>
+    <li>Converted collections into structured JSON payloads for persistence</li>
     <li>Implemented role-based logic to control screen, field, and action visibility</li>
-    <li>Ensured seamless integration with SQL Server for reliable data storage</li>
   </ul>
 
-  <p>
-    <strong>Tech Stack:</strong> Canvas PowerApps, Power Automate, SQL Server
-  </p>
-
-  <a
-    href="#"
-    target="_blank"
-    rel="noopener noreferrer"
-  >
-    🔗 View Demo / Repository
-  </a>
+  <h4>Challenges & Ownership</h4>
+  <ul>
+    <li>Reverse-engineered business logic from an existing C# SharePoint on-prem application</li>
+    <li>Rebuilt complex workflows in a low-code environment without loss of functionality</li>
+    <li>Maintained relational data integrity for one-to-many data models</li>
+    <li>Ensured reliable save, refresh, and resubmission of portfolio records</li>
+  </ul>
 </div>
 
 
-
-
-  
-     
-
-    <!-- Project 3: New Hires / Employee Onboarding -->
+    <!-- Project 2: New Hires / Employee Onboarding -->
 <div class="project-card">
   <h3>New Hires & Employee Onboarding App</h3>
 
@@ -326,6 +292,38 @@
   </a>
 </div>
 
+    
+  <!-- Project 3: Multi-Select PCF -->
+  <div class="project-card">
+    <h3>Multi-Select PCF Component</h3>
+
+    <p>
+      A reusable PowerApps Component Framework (PCF) control developed to
+      enhance user experience by enabling searchable multi-selection with
+      a chip-based interface where standard PowerApps controls were insufficient.
+    </p>
+
+    <ul>
+      <li>Developed using TypeScript following PCF best practices</li>
+      <li>Implements search and dynamic filtering for efficient selection</li>
+      <li>Displays selected values as removable, interactive chips</li>
+      <li>Optimized for performance when handling large datasets</li>
+      <li>Designed for reuse across Canvas Apps and Model-Driven Apps</li>
+    </ul>
+
+    <p>
+      <strong>Tech Stack:</strong>
+      HTML, CSS, TypeScript, PowerApps Component Framework (PCF)
+    </p>
+
+    <a
+      href="https://github.com/yachikayadav1054/pcf-multiselect"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      🔗 View GitHub Repository
+    </a>
+  </div>
 </section>
 
 
