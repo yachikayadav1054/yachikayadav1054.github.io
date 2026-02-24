@@ -4,310 +4,643 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Yachika Yadav | Power Platform Developer</title>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
     <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+        :root {
+            --navy: #1e3a5f;
+            --blue: #2563eb;
+            --blue-light: #3b82f6;
+            --text: #1e293b;
+            --text-muted: #64748b;
+            --surface: #ffffff;
+            --surface-2: #f8fafc;
+            --border: #e2e8f0;
+            --tag-bg: #eff6ff;
+            --tag-color: #1d4ed8;
+            --radius: 10px;
+            --shadow-sm: 0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
+            --shadow-lg: 0 8px 28px rgba(0,0,0,0.08);
+        }
+
         body {
-            font-family: Arial, Helvetica, sans-serif;
-            background-color: #f9fafb;
-            color: #1f2937;
-            line-height: 1.6;
-            max-width: 900px;
-            margin: auto;
-            padding: 30px;
+            font-family: 'DM Sans', sans-serif;
+            background-color: var(--surface-2);
+            color: var(--text);
+            line-height: 1.65;
+            font-size: 0.9rem;
         }
-        h1, h2, h3 {
-            color: #111827;
+
+        .container { max-width: 860px; margin: 0 auto; padding: 0 28px; }
+
+        /* ── Header ── */
+        header {
+            background: linear-gradient(135deg, #eef4ff 0%, #f0f7ff 60%, #e8f0fe 100%);
+            border-bottom: 1px solid #c7d9f8;
+            padding: 40px 0 32px;
         }
-        h1 {
+
+        header .container {
+            display: grid;
+            grid-template-columns: 1fr auto;
+            gap: 28px;
+            align-items: start;
+        }
+
+        .hero-title {
+            font-size: 0.72rem;
+            font-weight: 700;
+            color: var(--blue);
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            margin-bottom: 6px;
+        }
+
+        .hero-name {
+            font-family: 'DM Serif Display', serif;
             font-size: 2.4rem;
+            line-height: 1.1;
+            color: var(--navy);
+            margin-bottom: 10px;
         }
-        h2 {
-            margin-top: 40px;
-            border-bottom: 2px solid #e5e7eb;
-            padding-bottom: 5px;
+
+        .hero-desc {
+            font-size: 0.9rem;
+            color: #475569;
+            max-width: 520px;
+            line-height: 1.7;
         }
-        ul {
-            margin-left: 20px;
+
+        .hero-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin-top: 14px;
         }
-        li {
+
+        .badge {
+            background: #fff;
+            border: 1px solid #bfdbfe;
+            color: #1d4ed8;
+            padding: 4px 12px;
+            border-radius: 999px;
+            font-size: 0.78rem;
+            font-weight: 500;
+        }
+
+        .contact-links {
+            display: flex;
+            flex-direction: column;
+            gap: 9px;
+            padding-top: 2px;
+        }
+
+        .contact-links a {
+            display: flex;
+            align-items: center;
+            gap: 7px;
+            color: #475569;
+            text-decoration: none;
+            font-size: 0.83rem;
+            transition: color 0.2s;
+        }
+
+        .contact-links a:hover { color: var(--blue); }
+
+        /* ── Main ── */
+        main { padding: 28px 0 52px; }
+
+        .section { margin-bottom: 26px; }
+
+        .section-header {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            margin-bottom: 12px;
+        }
+
+        .section-label {
+            font-size: 0.68rem;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--blue);
+        }
+
+        .section-title {
+            font-family: 'DM Serif Display', serif;
+            font-size: 1.35rem;
+            color: var(--navy);
+        }
+
+        /* ── Stat strip ── */
+        .stats-strip {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1px;
+            background: var(--border);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            overflow: hidden;
+            margin-bottom: 26px;
+        }
+
+        .stat {
+            background: var(--surface);
+            padding: 14px 12px;
+            text-align: center;
+        }
+
+        .stat-num {
+            font-family: 'DM Serif Display', serif;
+            font-size: 1.7rem;
+            color: var(--navy);
+            line-height: 1;
+        }
+
+        .stat-label {
+            font-size: 0.72rem;
+            color: var(--text-muted);
+            margin-top: 3px;
+        }
+
+        /* ── Card ── */
+        .card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 18px 22px;
+            box-shadow: var(--shadow-sm);
+        }
+
+        /* ── Skills ── */
+        .skill-group { margin-bottom: 12px; }
+        .skill-group:last-child { margin-bottom: 0; }
+
+        .skill-group-name {
+            font-size: 0.7rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.07em;
+            color: var(--text-muted);
+            margin-bottom: 7px;
+        }
+
+        .tags { display: flex; flex-wrap: wrap; gap: 5px; }
+
+        .tag {
+            background: var(--tag-bg);
+            color: var(--tag-color);
+            padding: 4px 11px;
+            border-radius: 5px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            border: 1px solid #bfdbfe;
+        }
+
+        .divider { border: none; border-top: 1px solid var(--border); margin: 12px 0; }
+
+        /* ── Strengths ── */
+        .strength-list {
+            list-style: none;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8px 20px;
+        }
+
+        .strength-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+            font-size: 0.875rem;
+            color: var(--text);
+            line-height: 1.5;
+        }
+
+        .strength-list li::before {
+            content: '';
+            width: 5px;
+            height: 5px;
+            background: var(--blue);
+            border-radius: 50%;
+            flex-shrink: 0;
+            margin-top: 7px;
+        }
+
+        /* ── Certs ── */
+        .cert-list {
+            list-style: none;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+        }
+
+        .cert-list li {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.875rem;
+        }
+
+        .cert-badge {
+            background: var(--navy);
+            color: #fff;
+            font-size: 0.65rem;
+            font-weight: 700;
+            letter-spacing: 0.05em;
+            padding: 3px 9px;
+            border-radius: 4px;
+            white-space: nowrap;
+            flex-shrink: 0;
+        }
+
+        /* ── Projects ── */
+        .project-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 20px 24px;
+            margin-bottom: 12px;
+            box-shadow: var(--shadow-sm);
+            transition: box-shadow 0.2s, transform 0.2s;
+        }
+
+        .project-card:hover {
+            box-shadow: var(--shadow-lg);
+            transform: translateY(-2px);
+        }
+
+        .project-header {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: 12px;
             margin-bottom: 8px;
         }
-        .tag {
-            display: inline-block;
-            background: #e0e7ff;
-            color: #3730a3;
-            padding: 6px 10px;
-            border-radius: 6px;
-            margin: 4px 4px 4px 0;
-            font-size: 0.9rem;
+
+        .project-card h3 {
+            font-family: 'DM Serif Display', serif;
+            font-size: 1.1rem;
+            color: var(--navy);
+            line-height: 1.3;
         }
-        .contact a {
-            text-decoration: none;
-            color: #2563eb;
+
+        .stack-label {
+            background: #f0fdf4;
+            color: #166534;
+            border: 1px solid #bbf7d0;
+            font-size: 0.72rem;
+            font-weight: 600;
+            padding: 3px 10px;
+            border-radius: 999px;
+            white-space: nowrap;
+            flex-shrink: 0;
         }
-        .footer {
-            margin-top: 40px;
-            font-size: 0.9rem;
-            color: #6b7280;
+
+        .project-card > p {
+            font-size: 0.865rem;
+            color: var(--text-muted);
+            margin-bottom: 10px;
+            line-height: 1.65;
         }
-        /* Projects Section */
-#projects {
-  padding: 40px 20px;
-  max-width: 900px;
-  margin: auto;
-}
 
-#projects h2 {
-  font-size: 28px;
-  margin-bottom: 20px;
-}
+        .project-section-title {
+            font-size: 0.68rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.07em;
+            color: var(--text-muted);
+            margin: 10px 0 5px;
+        }
 
-/* Project Card */
-.project-card {
-  background: #ffffff;
-  border: 1px solid #e0e0e0;
-  border-radius: 10px;
-  padding: 20px 24px;
-  margin-bottom: 24px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
+        .project-card ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
 
-.project-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.08);
-}
+        .project-card ul li {
+            font-size: 0.845rem;
+            color: var(--text);
+            padding-left: 14px;
+            position: relative;
+            line-height: 1.5;
+        }
 
-.project-card h3 {
-  margin-top: 0;
-  color: #333;
-  font-size: 22px;
-}
+        .project-card ul li::before {
+            content: '–';
+            position: absolute;
+            left: 0;
+            color: var(--blue-light);
+            font-weight: 600;
+        }
 
-.project-card p {
-  color: #555;
-  line-height: 1.6;
-}
+        .impact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 7px;
+            margin: 7px 0 4px;
+        }
 
-.project-card ul {
-  padding-left: 18px;
-  margin: 12px 0;
-}
+        .impact-item {
+            background: var(--surface-2);
+            border: 1px solid var(--border);
+            border-radius: 7px;
+            padding: 9px 12px;
+        }
 
-.project-card ul li {
-  margin-bottom: 6px;
-  color: #444;
-}
+        .impact-item strong {
+            display: block;
+            font-size: 1.05rem;
+            font-family: 'DM Serif Display', serif;
+            color: var(--navy);
+        }
 
-.project-card a {
-  display: inline-block;
-  margin-top: 12px;
-  text-decoration: none;
-  color: #0066ff;
-  font-weight: 600;
-}
+        .impact-item span { font-size: 0.73rem; color: var(--text-muted); }
 
-.project-card a:hover {
-  text-decoration: underline;
-}
+        /* ── Footer ── */
+        footer {
+            background: #eef4ff;
+            border-top: 1px solid #c7d9f8;
+            color: #64748b;
+            text-align: center;
+            padding: 18px;
+            font-size: 0.83rem;
+        }
 
+        footer span { color: var(--blue); font-weight: 600; }
+
+        /* ── Responsive ── */
+        @media (max-width: 640px) {
+            header .container { grid-template-columns: 1fr; }
+            .contact-links { flex-direction: row; flex-wrap: wrap; }
+            .hero-name { font-size: 2rem; }
+            .strength-list, .cert-list { grid-template-columns: 1fr; }
+            .stats-strip { grid-template-columns: repeat(2, 1fr); }
+        }
     </style>
 </head>
 <body>
 
-    <h1>Hi, I’m Yachika Yadav 👋</h1>
-    <h3>Power Platform Developer | Mumbai, India 🇮🇳</h3>
-
-    <p>
-        I design and build <strong>enterprise-grade solutions using Microsoft Power Platform</strong>,
-        with a strong focus on scalable app architecture, automation, and performance optimization.
-        I enjoy solving complex business problems, especially <strong>delegation challenges and custom component development</strong>.
-    </p>
-
-    <h2>🚀 About Me</h2>
-    <ul>
-        <li>💼 3+ years of hands-on experience in Power Platform development</li>
-        <li>🏗️ Built and deployed 10+ enterprise applications used across business teams</li>
-        <li>⚡ Delivered automation solutions saving 350+ hours per month</li>
-        <li>🎯 Developed 10+ custom PCF components for reusable and enhanced UI/UX</li>
-        <li>🧩 Strong experience with Canvas Apps, Model-Driven Apps, Dataverse, and Power Automate</li>
-    </ul>
-
-    <h2>🛠️ Tech Stack & Skills</h2>
-
-    <h3>Power Platform</h3>
-    <div>
-        <span class="tag">Power Apps</span>
-        <span class="tag">Power Automate</span>
-        <span class="tag">Dataverse</span>
-        <span class="tag">Power BI</span>
-        <span class="tag">ALM</span>
-        <span class="tag">Copilot</span>
+<header>
+    <div class="container">
+        <div>
+            <p class="hero-title">Power Platform Developer · Mumbai, India</p>
+            <h1 class="hero-name">Yachika Yadav</h1>
+            <p class="hero-desc">
+                I design and build enterprise-grade solutions using Microsoft Power Platform —
+                specialising in scalable app architecture, automation, Power Pages portals,
+                and custom PCF development. Passionate about turning complex business requirements into elegant low-code solutions.
+            </p>
+            <div class="hero-badges">
+                <span class="badge">Power Apps</span>
+                <span class="badge">Power Automate</span>
+                <span class="badge">Power Pages</span>
+                <span class="badge">Dataverse</span>
+                <span class="badge">Power BI</span>
+                <span class="badge">SQL</span>
+                
+            </div>
+        </div>
+        <div class="contact-links">
+            <a href="https://linkedin.com/in/yachikayadav" target="_blank"><span>in</span> LinkedIn</a>
+            <a href="mailto:yachikayadav1054@gmail.com"><span>✉</span> Email</a>
+        </div>
     </div>
+</header>
 
-    <h3>Custom Development</h3>
-    <div>
-        <span class="tag">PCF</span>
-        <span class="tag">TypeScript</span>
-        <span class="tag">JavaScript</span>
-        <span class="tag">Html</span>
-        <span class="tag">CSS</span>
+<main>
+    <div class="container">
+
+        <!-- Stats -->
+        <div class="stats-strip">
+            <div class="stat">
+                <div class="stat-num">3+</div>
+                <div class="stat-label">Years Experience</div>
+            </div>
+            <div class="stat">
+                <div class="stat-num">10+</div>
+                <div class="stat-label">Enterprise Apps</div>
+            </div>
+            <div class="stat">
+                <div class="stat-num">350+</div>
+                <div class="stat-label">Hours Saved/Month</div>
+            </div>
+            <div class="stat">
+                <div class="stat-num">10+</div>
+                <div class="stat-label">PCF Components</div>
+            </div>
+        </div>
+
+        <!-- Skills -->
+        <div class="section">
+            <div class="section-header">
+                <span class="section-label">Technical Skills</span>
+                <h2 class="section-title">Tech Stack</h2>
+            </div>
+            <div class="card">
+                <div class="skill-group">
+                    <p class="skill-group-name">Power Platform</p>
+                    <div class="tags">
+                        <span class="tag">Canvas Apps</span>
+                        <span class="tag">Model-Driven Apps</span>
+                        <span class="tag">Power Pages</span>
+                        <span class="tag">Power Automate</span>
+                        <span class="tag">Power BI</span>
+                        <span class="tag">Dataverse</span>
+                        <span class="tag">Copilot Studio</span>
+                        <span class="tag">ALM & Pipelines</span>
+                        <span class="tag">Business Process Flows</span>
+                    </div>
+                </div>
+                <hr class="divider">
+                <div class="skill-group">
+                    <p class="skill-group-name">Custom Development</p>
+                    <div class="tags">
+                        <span class="tag">PCF Controls</span>
+                        <span class="tag">TypeScript</span>
+                        <span class="tag">JavaScript</span>
+                        <span class="tag">HTML / CSS</span>
+                        <span class="tag">Liquid Templates</span>
+                        <span class="tag">Portal Web Templates</span>
+                        <span class="tag">FetchXML</span>
+                    </div>
+                </div>
+                <hr class="divider">
+                <div class="skill-group">
+                    <p class="skill-group-name">Integrations & Data</p>
+                    <div class="tags">
+                        <span class="tag">SQL Server</span>
+                        <span class="tag">SharePoint</span>
+                        <span class="tag">Office 365</span>
+                        <span class="tag">REST APIs</span>
+                        <span class="tag">Custom Connectors</span>
+                        <span class="tag">Azure AD / Entra ID</span>
+                        <span class="tag">Dataverse Web API</span>
+                    </div>
+                </div>
+                <hr class="divider">
+                <div class="skill-group">
+                    <p class="skill-group-name">Governance & DevOps</p>
+                    <div class="tags">
+                        <span class="tag">Solution Management</span>
+                        <span class="tag">Environment Strategy</span>
+                        <span class="tag">Azure DevOps</span>
+                        <span class="tag">DLP Policies</span>
+                        <span class="tag">Power Platform CoE</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Strengths -->
+        <div class="section">
+            <div class="section-header">
+                <span class="section-label">What I Do Best</span>
+                <h2 class="section-title">Core Strengths</h2>
+            </div>
+            <div class="card">
+                <ul class="strength-list">
+                    <li>Solving delegation and performance challenges in large-scale datasets</li>
+                    <li>Designing enterprise-grade Canvas and Model-Driven Apps end-to-end</li>
+                    <li>Building Power Pages portals with Liquid templates, Web API, and custom authentication</li>
+                    <li>Developing production-ready PCF controls for Canvas and Model-Driven Apps</li>
+                    <li>Architecting secure, scalable Power Automate workflows and approval chains</li>
+                    <li>Integrating Power Platform with SQL Server, SharePoint, and REST APIs</li>
+                    <li>Managing ALM pipelines, solution packaging, and environment strategy</li>
+                    <li>Implementing role-based security and data governance with Dataverse</li>
+                    <li>Migrating legacy on-prem systems to modern Power Platform architectures</li>
+                    <li>Translating complex business requirements into efficient low-code solutions</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Certifications -->
+        <div class="section">
+            <div class="section-header">
+                <span class="section-label">Microsoft Certified</span>
+                <h2 class="section-title">Certifications</h2>
+            </div>
+            <div class="card">
+                <ul class="cert-list">
+                    <li><span class="cert-badge">PL-200</span> Power Platform Functional Consultant</li>
+                    <li><span class="cert-badge">PL-300</span> Power BI Data Analyst</li>
+                    <li><span class="cert-badge">PL-900</span> Power Platform Fundamentals</li>
+                    <li><span class="cert-badge">AZ-900</span> Azure Fundamentals</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Projects -->
+        <div class="section">
+            <div class="section-header">
+                <span class="section-label">Featured Work</span>
+                <h2 class="section-title">Projects</h2>
+            </div>
+
+            <!-- Project 1 -->
+            <div class="project-card">
+                <div class="project-header">
+                    <h3>Corporate Action & Portfolio Management</h3>
+                    <span class="stack-label">Canvas App · Power Automate · SQL</span>
+                </div>
+                <p>Enterprise-grade Canvas PowerApps application to manage corporate actions and portfolio records. Migrated from a legacy C# SharePoint on-prem system — business logic was reverse-engineered and rebuilt in a low-code environment while preserving all core functionality.</p>
+
+                <p class="project-section-title">Business Impact</p>
+                <div class="impact-grid">
+                    <div class="impact-item"><strong>~50%</strong><span>Reduction in manual data entry</span></div>
+                    <div class="impact-item"><strong>↑</strong><span>Data integrity across operational teams</span></div>
+                </div>
+
+                <p class="project-section-title">Key Features</p>
+                <ul>
+                    <li>Centralized landing page with searchable galleries for all corporate actions</li>
+                    <li>One-to-many relationship: one corporate action with multiple portfolio records</li>
+                    <li>Role-based access control with three distinct user roles</li>
+                    <li>Dynamic forms with validations, conditional visibility, and data loss-safe refresh</li>
+                </ul>
+
+                <p class="project-section-title">Technical Highlights</p>
+                <ul>
+                    <li>Executed SQL Server stored procedures via Power Automate flows</li>
+                    <li>Processed and normalized backend data into PowerApps collections</li>
+                    <li>Converted collections into structured JSON payloads for persistence</li>
+                    <li>Role-based logic controlling screen, field, and action visibility</li>
+                </ul>
+            </div>
+
+            <!-- Project 2 -->
+            <div class="project-card">
+                <div class="project-header">
+                    <h3>New Hires & Employee Onboarding App</h3>
+                    <span class="stack-label">Model-Driven · Dataverse · Power Automate</span>
+                </div>
+                <p>A Model-Driven Power Platform application that streamlines the employee onboarding process, ensuring all tasks, approvals, and documentation are tracked with full auditability across HR, IT, and Admin teams.</p>
+
+                <p class="project-section-title">Business Impact</p>
+                <div class="impact-grid">
+                    <div class="impact-item"><strong>50%</strong><span>Reduction in manual onboarding steps</span></div>
+                    <div class="impact-item"><strong>✓</strong><span>Policy compliance via automated approvals</span></div>
+                </div>
+
+                <p class="project-section-title">Key Features</p>
+                <ul>
+                    <li>Business Process Flow (BPF): Initiated → In Progress → Completed</li>
+                    <li>Automated task assignment based on role (HR, IT, Admin)</li>
+                    <li>Role-based dashboards for full visibility and accountability</li>
+                    <li>Audit trail maintained for all approvals and task completions</li>
+                </ul>
+
+                <p class="project-section-title">Technical Highlights</p>
+                <ul>
+                    <li>Built on Dataverse with Model-Driven App architecture and security roles</li>
+                    <li>Power Automate flows for multi-level approvals and email notifications</li>
+                    <li>Custom views and dashboards for onboarding progress metrics</li>
+                </ul>
+            </div>
+
+            <!-- Project 3 -->
+            <div class="project-card">
+                <div class="project-header">
+                    <h3>Interactive Gantt Chart PCF Component</h3>
+                    <span class="stack-label">PCF · TypeScript · D3.js · CSS</span>
+                </div>
+                <p>A fully interactive Gantt chart PCF control built for Model-Driven Apps to visualise project timelines, task dependencies, and resource allocation — replacing costly third-party tools and bringing rich scheduling UI natively into Dataverse.</p>
+
+                <p class="project-section-title">Business Impact</p>
+                <div class="impact-grid">
+                    <div class="impact-item"><strong>0</strong><span>Third-party licences needed</span></div>
+                    <div class="impact-item"><strong>↑</strong><span>Planning visibility for project teams</span></div>
+                </div>
+
+                <p class="project-section-title">Key Features</p>
+                <ul>
+                    <li>Renders Dataverse records as drag-and-drop timeline bars with date-range editing</li>
+                    <li>Task dependencies shown with connecting arrows between related records</li>
+                    <li>Colour-coded status lanes: Not Started / In Progress / Completed / Blocked</li>
+                    <li>Real-time write-back to Dataverse on bar drag or resize — no page refresh needed</li>
+                    <li>Fully configurable via PCF property pane — no code changes per deployment</li>
+                </ul>
+
+                <p class="project-section-title">Technical Highlights</p>
+                <ul>
+                    <li>Built with TypeScript and D3.js following PCF virtual control best practices</li>
+                    <li>Used Dataverse Web API for real-time record updates on user interaction</li>
+                    <li>Virtual DOM rendering for smooth performance with 200+ concurrent tasks</li>
+                    <li>Packaged and deployed via Power Platform solution with managed properties</li>
+                </ul>
+            </div>
+
+        </div>
     </div>
+</main>
 
-    <h3>Integrations & Data</h3>
-    <div>
-        <span class="tag">SQL Server</span>
-        <span class="tag">SharePoint</span>
-        <span class="tag">Office 365</span>
-        <span class="tag">REST APIs</span>
-    </div>
-
-    <h2>🧠 Core Strengths</h2>
-    <ul>
-        <li>Solving delegation and performance challenges in large datasets</li>
-        <li>Designing user-friendly, enterprise-grade Power Apps</li>
-        <li>Building secure and scalable automated workflows</li>
-        <li>Creating reusable custom components using PCF</li>
-        <li>Translating business requirements into efficient technical solutions</li>
-    </ul>
-
-    <h2>🏆 Certifications</h2>
-    <ul>
-        <li>Microsoft Certified: Power Platform Functional Consultant (PL-200)</li>
-        <li>Microsoft Certified: Power BI Data Analyst (PL-300)</li>
-        <li>Microsoft Certified: Power Platform Fundamentals (PL-900)</li>
-        <li>Microsoft Certified: Azure Fundamentals (AZ-900)</li>
-    </ul>
-
-    <h2>📫 Connect With Me</h2>
-    <ul class="contact">
-        <li>💼 <a href="https://linkedin.com/in/yachikayadav" target="_blank">LinkedIn</a></li>
-        <li>📧 <a href="mailto:yachikayadav1054@gmail.com">yachikayadav1054@gmail.com</a></li>
-        <li>🌐 Portfolio: <a href="https://yachikayadav1054.github.io/">yachikayadav1054.github.io </a> </li>
-    </ul>
-
-    <div class="footer">
-        ⭐ Always open to learning, collaboration, and solving challenging Power Platform problems.
-    </div>
-
-<section id="projects">
-  <h2>Projects</h2>
-
-<!-- Project 1: Corporate Action & Portfolio Management -->
-<div class="project-card">
-  <h3>Corporate Action & Portfolio Management Application</h3>
- <p>
-    <strong>Tech Stack:</strong> Canvas PowerApps · Power Automate · SQL Server
-  </p>
-
-  <p>
-    Enterprise-grade Canvas PowerApps application developed to manage corporate actions
-    and their associated portfolio records. The solution was migrated from a legacy
-    SharePoint on-prem application built in C#, where existing business logic was
-    reverse-engineered and reimplemented in PowerApps while preserving all core
-    functionalities.
-  </p>
-
-  <h4>Business Impact</h4>
-  <ul>
-    <li>Reduced manual data entry and Excel dependency by approximately 50%</li>
-    <li>Enabled accurate tracking of multiple portfolio records per corporate action</li>
-    <li>Improved operational efficiency and data integrity across operational teams</li>
-  </ul>
-
-  <h4>Key Features</h4>
-  <ul>
-    <li>Centralized landing page displaying all corporate actions with searchable galleries</li>
-    <li>One-to-many relationship management: one corporate action with multiple portfolio records</li>
-    <li>Role-based access control with three distinct user roles</li>
-    <li>Restricted creation of new corporate actions based on user role</li>
-    <li>Dynamic forms with validations and conditional visibility</li>
-    <li>Refresh and maintenance of portfolio records without data loss</li>
-  </ul>
-
-  <h4>Technical Highlights</h4>
-  <ul>
-    <li>Executed SQL Server stored procedures via Power Automate</li>
-    <li>Processed, cleaned, and normalized backend data into PowerApps collections</li>
-    <li>Bound collections to interactive galleries for performant UI rendering</li>
-    <li>Managed complex multi-record portfolio data using collections</li>
-    <li>Converted collections into structured JSON payloads for persistence</li>
-    <li>Implemented role-based logic to control screen, field, and action visibility</li>
-  </ul>
-
-  <h4>Challenges & Ownership</h4>
-  <ul>
-    <li>Reverse-engineered business logic from an existing C# SharePoint on-prem application</li>
-    <li>Rebuilt complex workflows in a low-code environment without loss of functionality</li>
-    <li>Maintained relational data integrity for one-to-many data models</li>
-    <li>Ensured reliable save, refresh, and resubmission of portfolio records</li>
-  </ul>
-</div>
-
-
-    <!-- Project 2: New Hires / Employee Onboarding -->
-<div class="project-card">
-  <h3>New Hires & Employee Onboarding App</h3>
-<p>
-    <strong>Tech Stack:</strong> Model-Driven App, Dataverse, Power Automate
-  </p>
-  <p>
-    A Model-Driven Power Platform application that streamlines the employee
-    onboarding process, ensuring all tasks, approvals, and documentation are
-    tracked efficiently with full auditability.
-  </p>
-
-  <p><strong>Business Impact:</strong></p>
-  <ul>
-    <li>Reduced manual onboarding steps by <strong>50%</strong></li>
-    <li>Improved visibility of onboarding progress for HR, IT, and Admin teams</li>
-    <li>Ensured compliance with company policies via automated approvals and audit tracking</li>
-  </ul>
-
-  <p><strong>Key Features:</strong></p>
-  <ul>
-    <li>Track new hire information and onboarding tasks across multiple departments</li>
-    <li>Automated task assignment based on role (HR, IT, Admin)</li>
-    <li>Business Process Flow (BPF) for status tracking: Initiated → In Progress → Completed</li>
-    <li>Role-based access and dashboards for visibility and accountability</li>
-    <li>Audit trail maintained for approvals and task completion</li>
-  </ul>
-
-  <p><strong>Technical Highlights:</strong></p>
-  <ul>
-    <li>Built using Model-Driven App on Dataverse</li>
-    <li>Business Process Flow (BPF) for step-by-step onboarding</li>
-    <li>Role-based security for HR, IT, and Admin teams</li>
-    <li>Dashboards and views for task tracking and completion metrics</li>
-    <li>Integration-ready with Power Automate for notifications and approvals</li>
-  </ul>
-
-</div>
-
-    
-  <!-- Project 3: Multi-Select PCF -->
-  <div class="project-card">
-    <h3>Multi-Select PCF Component</h3>
- <p>
-      <strong>Tech Stack:</strong>
-      HTML, CSS, TypeScript, PowerApps Component Framework (PCF)
-    </p>
-    <p>
-      A reusable PowerApps Component Framework (PCF) control developed to
-      enhance user experience by enabling searchable multi-selection with
-      a chip-based interface where standard PowerApps controls were insufficient.
-    </p>
-
-    <ul>
-      <li>Developed using TypeScript following PCF best practices</li>
-      <li>Implements search and dynamic filtering for efficient selection</li>
-      <li>Displays selected values as removable, interactive chips</li>
-      <li>Optimized for performance when handling large datasets</li>
-      <li>Designed for reuse across Canvas Apps and Model-Driven Apps</li>
-    </ul>
-
-  </div>
-</section>
-
+<footer>
+    <p>⭐ Always open to learning, collaboration, and solving challenging Power Platform problems &nbsp;·&nbsp; <span>Yachika Yadav</span></p>
+</footer>
 
 </body>
 </html>
